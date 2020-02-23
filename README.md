@@ -24,7 +24,7 @@ PREFIX="${HOME}/Documents/letsencrypt"
 mkdir -p ${PREFIX}
 MASTERDOMAIN=ea.demos.io
 SUBDOMAIN=ml4.ea.demos.io
-EMAIL=lewis@hashicorp.com
+EMAIL=you@email.com
 certbot certonly \
 --non-interactive \
 --manual          \
