@@ -1,0 +1,9 @@
+# basically everything certbot creates - which shouldn't be in here anyway
+accounts
+archive
+backups
+csr
+keys
+**/*.log
+live
+renewal*
