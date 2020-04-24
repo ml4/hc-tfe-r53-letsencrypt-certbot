@@ -22,8 +22,8 @@ brew install certbot
 
 PREFIX="${HOME}/Documents/letsencrypt"
 mkdir -p ${PREFIX}
-MASTERDOMAIN=ea.demos.io
-SUBDOMAIN=ml4.ea.demos.io
+MASTERDOMAIN=yourdomain.io
+SUBDOMAIN=mysubdomain.${MASTERDOMAIN}
 EMAIL=you@email.com
 certbot certonly \
 --non-interactive \
@@ -40,7 +40,7 @@ certbot certonly \
 --email ${EMAIL}
 ```
 
-* One gets output such as
+* For the first run, one gets output such as
 
 ```
 Saving debug log to /Users/ml4/Documents/letsencrypt/letsencrypt.log
@@ -75,4 +75,32 @@ IMPORTANT NOTES:
 
  ```
 
-* The files you're interested in are in ${PREFIX}/live/<domain>
+* The files you're interested in are in ${PREFIX}/live/<domain> which, for TFE, is the privkey1.pem and the fullchain1.pem which is a cat of cert1.pem and chain1.pem in the right order.
+
+* For a renewal, certbot finds the cert in your filesystem from the previous run.  You'll get output such as:
+
+Saving debug log to /Users/ml4/Documents/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator manual, Installer None
+Cert is due for renewal, auto-renewing...
+Renewing an existing certificate
+Performing the following challenges:
+dns-01 challenge for ml4.ea.demos.io
+Running manual-auth-hook command: ./auth-hook.sh UPSERT ea.demos.io
+Waiting for verification...
+Cleaning up challenges
+Running manual-cleanup-hook command: ./auth-hook.sh DELETE ea.demos.io
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /Users/ml4/Documents/letsencrypt/live/ml4.ea.demos.io/fullchain.pem
+   Your key file has been saved at:
+   /Users/ml4/Documents/letsencrypt/live/ml4.ea.demos.io/privkey.pem
+   Your cert will expire on 2020-07-23. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot
+   again. To non-interactively renew *all* of your certificates, run
+   "certbot renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+
