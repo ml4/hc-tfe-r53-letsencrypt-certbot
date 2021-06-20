@@ -1,4 +1,4 @@
-![Development status](https://img.shields.io/badge/status-PRD-D00.svg?style=for-the-badge)
+![Development status](https://img.shields.io/badge/status-UAT-F81.svg?style=for-the-badge)
 ![Certbot version](https://img.shields.io/badge/certbot-1.1.6-003b5b.svg?style=for-the-badge)
 
 # hc-tfe-r53-letsencrypt-certbot
