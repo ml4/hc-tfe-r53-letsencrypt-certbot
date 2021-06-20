@@ -1,3 +1,6 @@
+![Development status](https://img.shields.io/badge/status-PRD-D00.svg?style=for-the-badge)
+![Certbot version](https://img.shields.io/badge/CIS_benchmark-2.0.1-003b5b.svg?style=for-the-badge)
+
 # hc-tfe-r53-letsencrypt-certbot
 
 Repository which automates the setup and management of SSL certs for domains managed in Route53 when creating TFE instances which need them.
